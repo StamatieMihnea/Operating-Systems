@@ -1,7 +1,7 @@
 ; SPDX-License-Identifier: BSD-3-Clause
 
 section .text
-
+global read
 global write
 global exit
 
@@ -14,6 +14,12 @@ write:
     syscall
 
     ret
+
+read:
+  mov rax, 0
+  syscall
+
+  ret
 
 exit:
     ; rax <- __NR_exit (index of exit syscall: 60)

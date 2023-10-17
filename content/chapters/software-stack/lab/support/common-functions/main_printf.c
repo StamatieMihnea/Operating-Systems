@@ -16,7 +16,10 @@ void _putchar(char character)
 
 int main(void)
 {
-	printf("[before] src is at %p, len is %lu, content: \"%s\"\n", src, strlen(src), src);
+  char buffer[100];
+	sprintf(buffer, "[before] src is at %p, len is %lu, content: \"%s\"\n", src, strlen(src), src);
+  write(1, buffer, strlen(buffer));
+  
 	printf("[before] dest is at %p, len is %lu, content: \"%s\"\n", dest, strlen(dest), dest);
 
 	printf("copying src to dest\n");

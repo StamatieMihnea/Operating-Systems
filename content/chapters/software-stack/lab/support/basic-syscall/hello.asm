@@ -3,6 +3,7 @@
 section .rodata
 
 hello db "Hello, world!", 10, 0
+bye db "Bye!", 10, 0
 
 section .text
 
@@ -21,6 +22,12 @@ main:
     mov rsi, hello
     mov rdx, 14
     mov rax, 1
+    syscall
+
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, bye
+    mov rdx, 5
     syscall
 
     ; Call exit(0).
